@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x]
-
+    working-directory: ~/github-actions-test
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
@@ -22,6 +22,5 @@ jobs:
         yarn install
         yarn run build --if-present
     - name: deploy to Firebase Hosting
-      working-directory: ~/github-actions-test
       run: |
         ./node_modules/.bin/firebase deploy --token=${FIREBASE_TOKEN}
