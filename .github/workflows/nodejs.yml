@@ -22,5 +22,6 @@ jobs:
         yarn install
         yarn run build --if-present
     - name: deploy to Firebase Hosting
+      working_directory: ~/github-actions-test
       run: |
         ./node_modules/.bin/firebase deploy --token=${FIREBASE_TOKEN}
