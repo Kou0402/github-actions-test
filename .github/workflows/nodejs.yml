@@ -23,4 +23,4 @@ jobs:
         yarn generate
     - name: deploy to Firebase Hosting
       run: |
-        ./node_modules/.bin/firebase deploy --token=1/s3umB-OvlFlK_fYQj6DhQ72AhGs7YxY8w6FDuaR6Dmw
+        ./node_modules/.bin/firebase deploy --token=${{ secrets.FIREBASE_TOKEN}}
